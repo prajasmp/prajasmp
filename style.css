@@ -1,83 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praja SMP | Official Portal</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-</head>
-<body>
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <div class="portal-container">
-        <!-- TOP SECTION: Logo, IP, and Discord -->
-        <header class="main-header">
-            <div class="header-side left">
-                <div class="ip-box" onclick="copyIP()">
-                    <span class="label">SERVER IP</span>
-                    <span id="ip-text">PLAY.PRAJASMP.FUN</span>
-                    <span class="sub-label">Click to Copy</span>
-                </div>
-            </div>
+/* ===== BODY ===== */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e2e8f0;
+  line-height: 1.6;
+}
 
-            <div class="logo-area">
-                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Praja SMP Logo" class="server-logo">
-            </div>
+/* ===== NAVBAR / HEADER ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
 
-            <div class="header-side right">
-                <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
-                    <span class="label">COMMUNITY</span>
-                    <span class="discord-join">JOIN DISCORD</span>
-                    <span class="sub-label">Click to Join</span>
-                </a>
-            </div>
-        </header>
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #38bdf8;
+}
 
-        <!-- MIDDLE SECTION: Store News & Support -->
-        <main class="store-news">
-            <section class="welcome-box">
-                <h1>Welcome to the Official Store of <span class="purple-text">Praja SMP</span></h1>
-                <p>Enhance your gameplay experience with our premium ranks, coins, and exclusive perks. Your support helps us keep the server running 24/7 with zero lag.</p>
-            </section>
+.logo span {
+  color: #22c55e;
+}
 
-            <div class="grid-info">
-                <div class="info-card">
-                    <h3>SUPPORT</h3>
-                    <p>Have questions before you buy? Our team is here to help.</p>
-                    <p><strong>Email:</strong> developerlaksly@gmail.com</p>
-                    <!-- Updated color to Discord Blue for better visibility -->
-                    <p><strong>Discord:</strong> <a href="https://dsc.gg/prajasmp" style="color: #5865F2; font-weight: bold; text-decoration: none;">Create a Ticket</a></p>
-                </div>
+/* ===== NAV LINKS ===== */
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #cbd5f5;
+  font-weight: 500;
+  transition: 0.3s;
+}
 
-                <div class="info-card">
-                    <h3>REFUND POLICY</h3>
-                    <p>All purchases are final. Products are <strong>non-refundable</strong>. Any attempt to chargeback will result in an immediate and permanent ban from our network.</p>
-                </div>
-            </div>
-        </main>
+.nav-links a:hover {
+  color: #38bdf8;
+}
 
-        <!-- FOOTER: Terms & Conditions Link -->
-        <footer class="portal-footer">
-            <p>&copy; 2026 Praja SMP. All Rights Reserved.</p>
-            <nav class="footer-nav">
-                <a href="terms.html">Terms & Conditions</a> | 
-                <a href="terms.html#privacy">Privacy Policy</a>
-            </nav>
-        </footer>
-    </div>
+/* ===== HERO ===== */
+.hero {
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-    <script>
-        function copyIP() {
-            const ip = "play.prajasmp.fun";
-            navigator.clipboard.writeText(ip);
-            const text = document.getElementById('ip-text');
-            text.innerText = "COPIED!";
-            text.style.color = "#9d50bb";
-            setTimeout(() => { 
-                text.innerText = ip.toUpperCase(); 
-                text.style.color = "white";
-            }, 2000);
-        }
-    </script>
-</body>
-</html>
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #22c55e;
+}
+
+.hero p {
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+/* ===== BUTTONS ===== */
+.btn-premium {
+  padding: 12px 24px;
+  background: linear-gradient(45deg, #38bdf8, #22c55e);
+  color: #020617;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-premium:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(56,189,248,0.4);
+}
+
+/* ===== IP BOX ===== */
+.ip-container {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ip-container:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.copy-icon {
+  margin-left: 10px;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+section p {
+  color: #94a3b8;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: rgba(15,23,42,0.7);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(34,197,94,0.2);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: #64748b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
