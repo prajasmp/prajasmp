@@ -1,63 +1,67 @@
-:root {
-    --purple: #9d50bb;
-    --dark-bg: #0a0a0a;
-    --card-bg: #141414;
-}
-
-body { background: var(--dark-bg); color: white; font-family: 'Montserrat', sans-serif; margin: 0; }
-
-/* Header and Logo */
-.main-header {
+/* NAVBAR */
+.navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 40px 5%;
-    background: radial-gradient(circle, rgba(157, 80, 187, 0.1) 0%, transparent 70%);
+    padding: 20px 10%;
+    background: rgba(0,0,0,0.9);
+    border-bottom: 2px solid var(--purple);
 }
-.server-logo { max-width: 280px; height: auto; filter: drop-shadow(0 0 20px var(--purple)); }
+.logo-small { font-family: 'Orbitron'; font-weight: 900; font-size: 1.2rem; }
+.logo-small span { color: var(--purple); }
+.nav-links a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--purple); padding: 5px 15px; border-radius: 4px; transition: 0.3s; }
+.nav-links a:hover { background: var(--purple); }
 
-/* VISIT STORE BUTTON STYLING */
-.store-btn-container { text-align: center; margin: 20px 0; }
+/* STORE LAYOUT */
+.store-header { text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, rgba(157, 80, 187, 0.1), transparent); }
+.store-header h1 { font-family: 'Orbitron'; font-size: 3rem; margin: 0; }
+.category-title { font-family: 'Orbitron'; text-align: center; margin: 50px 0 30px; color: var(--purple); letter-spacing: 3px; font-size: 1.2rem; }
 
-.visit-store-btn {
-    display: inline-block;
-    padding: 15px 50px;
+.store-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
+
+/* PRODUCT CARDS */
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(157, 80, 187, 0.2);
+    padding: 40px 20px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+.product-card:hover { transform: translateY(-10px); border-color: var(--purple); box-shadow: 0 10px 30px rgba(157, 80, 187, 0.2); }
+
+.product-card h3 { font-family: 'Orbitron'; font-size: 1.4rem; margin-bottom: 10px; }
+.price { font-size: 2rem; font-weight: 900; color: var(--purple); margin: 20px 0; }
+.features { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; display: inline-block; }
+.features li { font-size: 0.9rem; color: #bbb; margin-bottom: 8px; }
+.features li::before { content: "✔"; color: var(--purple); margin-right: 10px; }
+
+/* BUTTONS & TAGS */
+.buy-btn {
+    width: 100%;
+    padding: 12px;
     background: var(--purple);
+    border: none;
     color: white;
     font-family: 'Orbitron';
-    font-weight: 900;
-    text-decoration: none;
-    border-radius: 5px;
-    letter-spacing: 2px;
-    box-shadow: 0 0 15px var(--purple);
-    transition: 0.3s ease-in-out;
-    border: 2px solid transparent;
-}
-
-.visit-store-btn:hover {
-    background: transparent;
-    border-color: var(--purple);
-    box-shadow: 0 0 30px var(--purple);
-    transform: scale(1.05);
-}
-
-/* Interactive Boxes */
-.ip-box, .discord-box {
-    background: var(--card-bg);
-    border: 1px solid rgba(157, 80, 187, 0.3);
-    padding: 15px;
-    border-radius: 8px;
+    font-weight: bold;
     cursor: pointer;
-    text-decoration: none;
-    display: block;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; }
-.purple-text { color: var(--purple); }
+.buy-btn:hover { background: #b666d6; box-shadow: 0 0 15px var(--purple); }
 
-/* Information Cards */
-.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
-.info-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-left: 4px solid var(--purple); }
-.info-card h3 { font-family: 'Orbitron'; color: var(--purple); }
-
-.portal-footer { text-align: center; padding: 50px; color: #444; }
-.footer-nav a { color: var(--purple); text-decoration: none; }
+.featured { border: 2px solid var(--purple); transform: scale(1.05); }
+.tag {
+    position: absolute;
+    top: 10px;
+    right: -30px;
+    background: var(--purple);
+    padding: 5px 35px;
+    transform: rotate(45deg);
+    font-size: 0.6rem;
+    font-weight: bold;
+}
