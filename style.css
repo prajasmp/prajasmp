@@ -6,40 +6,58 @@
 
 body { background: var(--dark-bg); color: white; font-family: 'Montserrat', sans-serif; margin: 0; }
 
+/* Header and Logo */
 .main-header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 5%;
+    padding: 40px 5%;
     background: radial-gradient(circle, rgba(157, 80, 187, 0.1) 0%, transparent 70%);
 }
-
-.header-side { width: 250px; text-align: center; }
 .server-logo { max-width: 280px; height: auto; filter: drop-shadow(0 0 20px var(--purple)); }
 
+/* VISIT STORE BUTTON STYLING */
+.store-btn-container { text-align: center; margin: 20px 0; }
+
+.visit-store-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    background: var(--purple);
+    color: white;
+    font-family: 'Orbitron';
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px var(--purple);
+    transition: 0.3s ease-in-out;
+    border: 2px solid transparent;
+}
+
+.visit-store-btn:hover {
+    background: transparent;
+    border-color: var(--purple);
+    box-shadow: 0 0 30px var(--purple);
+    transform: scale(1.05);
+}
+
+/* Interactive Boxes */
 .ip-box, .discord-box {
     background: var(--card-bg);
     border: 1px solid rgba(157, 80, 187, 0.3);
     padding: 15px;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
     text-decoration: none;
     display: block;
 }
-
-.ip-box:hover, .discord-box:hover { border-color: var(--purple); transform: translateY(-5px); }
-
-.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; letter-spacing: 2px; }
-.sub-label { display: block; font-size: 0.6rem; color: #555; margin-top: 5px; }
-
-.store-news { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-.welcome-box h1 { font-family: 'Orbitron'; font-size: 2rem; text-align: center; }
+.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; }
 .purple-text { color: var(--purple); }
 
-.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+/* Information Cards */
+.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
 .info-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-left: 4px solid var(--purple); }
-.info-card h3 { font-family: 'Orbitron'; color: var(--purple); margin-top: 0; }
+.info-card h3 { font-family: 'Orbitron'; color: var(--purple); }
 
-.portal-footer { text-align: center; padding: 50px; color: #444; font-size: 0.8rem; }
+.portal-footer { text-align: center; padding: 50px; color: #444; }
 .footer-nav a { color: var(--purple); text-decoration: none; }
