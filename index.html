@@ -4,68 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praja SMP | Official Portal</title>
-    <!-- CRITICAL: Ensure this file is named style.css exactly -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <div class="portal-container">
-        <!-- HEADER: IP, LOGO, DISCORD -->
         <header class="main-header">
             <div class="header-side">
                 <div class="ip-box" onclick="copyIP()">
                     <span class="label">SERVER IP</span>
-                    <span id="ip-text">PLAY.PRAJASMP.FUN</span>
+                    <span id="ip-text" class="box-text">PLAY.PRAJASMP.FUN</span>
                     <span class="sub-label">Click to Copy</span>
                 </div>
             </div>
-
             <div class="logo-area">
-                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Praja SMP Logo" class="server-logo">
+                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Logo" class="server-logo">
             </div>
-
             <div class="header-side">
                 <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
                     <span class="label">COMMUNITY</span>
-                    <span class="discord-join">JOIN DISCORD</span>
+                    <span class="box-text">JOIN DISCORD</span>
                     <span class="sub-label">Click to Join</span>
                 </a>
             </div>
         </header>
 
-        <!-- STORE BUTTON -->
         <div class="store-btn-container">
             <a href="store.html" class="visit-store-btn">VISIT STORE</a>
         </div>
 
-        <!-- MAIN CONTENT -->
-        <main class="store-news">
-            <section class="welcome-box">
-                <h1>Welcome to the Official Store of <span class="purple-text">Praja SMP</span></h1>
-                <p>Enhance your gameplay experience with our premium ranks and exclusive perks.</p>
-            </section>
-
-            <div class="grid-info">
-                <div class="info-card">
-                    <h3>SUPPORT</h3>
-                    <p><strong>Email:</strong> developerlaksly@gmail.com</p>
-                    <p><strong>Discord:</strong> <a href="https://dsc.gg/prajasmp" class="ticket-link">Create a Ticket</a></p>
-                </div>
-
-                <div class="info-card">
-                    <h3>REFUND POLICY</h3>
-                    <p>All purchases are final and <strong>non-refundable</strong>.</p>
-                </div>
+        <main class="grid-info">
+            <div class="info-card">
+                <h3>SUPPORT</h3>
+                <p><strong>Email:</strong> developerlaksly@gmail.com</p>
+                <p>Join Discord to <span class="purple-text">Create a Ticket</span></p>
+            </div>
+            <div class="info-card">
+                <h3>REFUND POLICY</h3>
+                <p>All purchases are final and <br><strong class="purple-text">non-refundable</strong>.</p>
             </div>
         </main>
 
         <footer class="portal-footer">
             <p>&copy; 2026 Praja SMP. All Rights Reserved.</p>
-            <nav class="footer-nav">
-                <a href="terms.html">Terms & Conditions</a> | 
-                <a href="privacy.html">Privacy Policy</a>
-            </nav>
         </footer>
     </div>
 
@@ -75,11 +56,7 @@
             navigator.clipboard.writeText(ip);
             const text = document.getElementById('ip-text');
             text.innerText = "COPIED!";
-            text.style.color = "#9d50bb";
-            setTimeout(() => { 
-                text.innerText = ip.toUpperCase(); 
-                text.style.color = "white";
-            }, 2000);
+            setTimeout(() => { text.innerText = ip.toUpperCase(); }, 2000);
         }
     </script>
 </body>
