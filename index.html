@@ -3,27 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praja SMP | Home</title>
+    <title>Praja SMP | Official Portal</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">PRAJA<span>SMP</span></div>
-        <div class="nav-links">
-            <a href="index.html">HOME</a>
-            <a href="store.html" class="nav-store">STORE</a>
-        </div>
-    </nav>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>PRAJA <span class="purple-text">SMP</span></h1>
-            <p>Owned by Lakshit | Managed by shxsshh</p>
-            <div class="hero-btns">
-                <a href="store.html" class="btn-main">SHOP NOW</a>
-                <div class="ip-box">PLAY.PRAJASMP.FUN</div>
+
+    <div class="portal-container">
+        <!-- TOP SECTION: Logo, IP, and Discord -->
+        <header class="main-header">
+            <div class="header-side left">
+                <div class="ip-box" onclick="copyIP()">
+                    <span class="label">SERVER IP</span>
+                    <span id="ip-text">PLAY.PRAJASMP.FUN</span>
+                    <span class="sub-label">Click to Copy</span>
+                </div>
             </div>
-        </div>
-    </header>
+
+            <div class="logo-area">
+                <img src="YOUR_LOGO_LINK_HERE" alt="Praja SMP Logo" class="server-logo">
+            </div>
+
+            <div class="header-side right">
+                <a href="https://discord.gg/yourlink" target="_blank" class="discord-box">
+                    <span class="label">COMMUNITY</span>
+                    <span class="discord-join">JOIN DISCORD</span>
+                    <span class="sub-label">Click to Join</span>
+                </a>
+            </div>
+        </header>
+
+        <!-- MIDDLE SECTION: Store News & Support -->
+        <main class="store-news">
+            <section class="welcome-box">
+                <h1>Welcome to the Official Store of <span class="purple-text">Praja SMP</span></h1>
+                <p>Enhance your gameplay experience with our premium ranks, coins, and exclusive perks. Your support helps us keep the server running 24/7 with zero lag.</p>
+            </section>
+
+            <div class="grid-info">
+                <div class="info-card">
+                    <h3>SUPPORT</h3>
+                    <p>Have questions before you buy? Our team is here to help.</p>
+                    <p><strong>Email:</strong> developer.laksly@gmail.com</p>
+                    <p><strong>Discord:</strong> <a href="#">Create a Ticket</a></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>REFUND POLICY</h3>
+                    <p>All purchases are final. Products are <strong>non-refundable</strong>. Any attempt to chargeback will result in an immediate and permanent ban from our network.</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER: Terms & Conditions Link -->
+        <footer class="portal-footer">
+            <p>&copy; 2026 Praja SMP. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="terms.html">Terms & Conditions</a> | 
+                <a href="terms.html#privacy">Privacy Policy</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        function copyIP() {
+            const ip = "play.prajasmp.fun";
+            navigator.clipboard.writeText(ip);
+            const text = document.getElementById('ip-text');
+            text.innerText = "COPIED!";
+            text.style.color = "#9d50bb";
+            setTimeout(() => { 
+                text.innerText = ip.toUpperCase(); 
+                text.style.color = "white";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
