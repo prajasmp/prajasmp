@@ -1,156 +1,133 @@
 :root {
     --purple: #9d50bb;
-    --dark-bg: #050505;
-    --glass: rgba(20, 20, 20, 0.85);
+    --dark-bg: #0a0a0a;
+    --card-bg: rgba(20, 20, 20, 0.95); /* High-quality dark glass */
 }
 
-body.store-body {
-    margin: 0;
-    padding: 0;
+/* BASE STYLING */
+body {
     background-color: var(--dark-bg);
+    /* Replace YOUR_IMAGE_LINK_HERE with your link */
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('https://img.sanishtech.com/u/03e648201d82f3a9acf9f358eeb88ad8.png') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
+    margin: 0;
+    padding: 0;
 }
 
-/* BLURRED BACKGROUND */
-.bg-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* REPLACE THE LINK BELOW WITH YOUR IMAGE */
-    background: url('https://img.sanishtech.com/u/03e648201d82f3a9acf9f358eeb88ad8.png') no-repeat center center/cover;
-    filter: blur(10px) brightness(0.4);
-    z-index: -1;
-}
-
-.store-wrapper {
-    width: 100%;
+/* PORTAL CONTAINER */
+.portal-container {
     max-width: 1100px;
-    padding: 40px 20px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.store-header {
+/* HEADER - CLEAN & SMALL LOGO */
+.store-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.store-mini-logo {
+    max-width: 140px; /* Professional size, not too big */
+    height: auto;
+    filter: drop-shadow(0 0 10px var(--purple));
+}
+
+/* WELCOME TEXT */
+.welcome-box {
     text-align: center;
     margin-bottom: 50px;
 }
 
-.store-logo-img {
-    max-width: 200px;
-    filter: drop-shadow(0 0 15px var(--purple));
-    margin-bottom: 20px;
-}
-
-.premium-title {
+.welcome-box h1 {
     font-family: 'Orbitron';
     font-size: 2.2rem;
     letter-spacing: 2px;
-    margin: 10px 0;
 }
 
-.store-subtitle {
-    font-size: 0.9rem;
-    color: #bbb;
-    letter-spacing: 1px;
+.purple-text {
+    color: var(--purple);
+    text-shadow: 0 0 10px var(--purple);
 }
 
-.header-line {
-    height: 2px;
-    width: 100px;
-    background: var(--purple);
-    margin: 20px auto;
-    box-shadow: 0 0 10px var(--purple);
-}
-
-/* GRID LAYOUT */
-.store-grid {
+/* PREMIUM GRID SYSTEM */
+.grid-info {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 25px;
 }
 
-/* SECTION CARDS */
-.store-section {
-    background: var(--glass);
-    border: 1px solid rgba(157, 80, 187, 0.2);
-    border-radius: 15px;
+/* PREMIUM CARD LOOK */
+.info-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(157, 80, 187, 0.3);
+    border-radius: 10px;
     padding: 25px;
-    backdrop-filter: blur(5px);
-    transition: 0.3s;
+    transition: 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-.store-section:hover {
+.info-card:hover {
     border-color: var(--purple);
     transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(157, 80, 187, 0.2);
 }
 
-.section-title {
+.info-card h3 {
     font-family: 'Orbitron';
-    font-size: 1.1rem;
     color: var(--purple);
-    border-bottom: 1px solid rgba(157, 80, 187, 0.3);
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(157, 80, 187, 0.2);
+    padding-bottom: 15px;
 }
 
-.item-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.item {
+/* ITEM ROWS */
+.premium-item {
     display: flex;
     justify-content: space-between;
-    font-size: 0.95rem;
-    font-weight: 500;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.price {
+.price-tag {
+    font-family: 'Orbitron';
     color: var(--purple);
     font-weight: 700;
 }
 
-.section-footer {
-    margin-top: 20px;
-    font-size: 0.75rem;
-    color: #777;
-    font-style: italic;
-    text-align: center;
-}
-
-.featured-section {
-    background: linear-gradient(145deg, rgba(157, 80, 187, 0.2), var(--glass));
+/* SPECIAL FEATURED BOX */
+.featured-glow {
+    background: linear-gradient(145deg, rgba(157, 80, 187, 0.1), #141414);
     border: 1px solid var(--purple);
-    text-align: center;
 }
 
 /* FOOTER */
-.store-footer {
+.portal-footer {
     text-align: center;
-    margin-top: 60px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    color: #555;
+    padding: 60px 0;
+    color: #666;
     font-size: 0.8rem;
 }
 
-.back-link {
-    color: var(--purple);
+/* RETURN BUTTON (matching Discord/IP style) */
+.back-btn {
     text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-    font-weight: bold;
     border: 1px solid var(--purple);
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.back-link:hover {
+.back-btn:hover {
     background: var(--purple);
-    color: white;
 }
