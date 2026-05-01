@@ -9,37 +9,38 @@
 </head>
 <body>
     <div class="portal-container">
+        <!-- TOP NAVIGATION -->
         <header class="main-header">
             <div class="ip-box" onclick="copyIP()">
                 <span class="label">SERVER IP</span>
                 <span id="ip-text" class="box-text">PLAY.PRAJASMP.FUN</span>
-                <span class="sub-label">Click to Copy</span>
-            </div>
-
-            <div class="welcome-text-area">
-                <h1>Welcome to <br><span style="color: var(--purple);">Praja SMP</span></h1>
             </div>
 
             <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
                 <span class="label">COMMUNITY</span>
                 <span class="box-text">JOIN DISCORD</span>
-                <span class="sub-label">Click to Join</span>
             </a>
         </header>
 
-        <div style="text-align: center;">
+        <!-- CENTER HERO AREA -->
+        <section class="hero-section">
+            <span class="welcome-label">WELCOME TO</span>
+            <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Praja SMP Logo" class="main-logo-img">
+            <br>
             <a href="store.html" class="visit-store-btn">VISIT STORE</a>
-        </div>
+        </section>
 
+        <!-- BOTTOM INFO CARDS -->
         <main class="grid-info">
             <div class="info-card">
-                <h3>SUPPORT</h3>
-                <p><strong>Email:</strong> developerlaksly@gmail.com</p>
-                <p>Join Discord for Support Tickets</p>
+                <h3 style="font-family: 'Orbitron'; color: var(--purple);">SUPPORT</h3>
+                <p>developerlaksly@gmail.com</p>
+                <p style="font-size: 0.8rem; color: #888;">Open a ticket on Discord for fast help</p>
             </div>
             <div class="info-card">
-                <h3>REFUND POLICY</h3>
-                <p>All virtual purchases are <strong style="color: var(--purple);">non-refundable</strong>.</p>
+                <h3 style="font-family: 'Orbitron'; color: var(--purple);">REFUND POLICY</h3>
+                <p>All virtual items are final purchases.</p>
+                <p style="font-size: 0.8rem; color: #888;">No refunds or chargebacks allowed.</p>
             </div>
         </main>
     </div>
@@ -48,8 +49,9 @@
         function copyIP() {
             const ip = "play.prajasmp.fun";
             navigator.clipboard.writeText(ip);
-            document.getElementById('ip-text').innerText = "COPIED!";
-            setTimeout(() => { document.getElementById('ip-text').innerText = ip.toUpperCase(); }, 2000);
+            const text = document.getElementById('ip-text');
+            text.innerText = "COPIED!";
+            setTimeout(() => { text.innerText = ip.toUpperCase(); }, 2000);
         }
     </script>
 </body>
