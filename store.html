@@ -2,51 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store | Praja SMP</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
 </head>
 <body style="background: #080808;">
-
     <nav class="navbar">
         <div class="logo">PRAJA<span>SMP</span></div>
-        <div class="nav-links">
-            <a href="index.html">Back Home</a>
-            <a href="#" class="nav-store">My Account</a>
-        </div>
+        <a href="index.html" style="color: white; text-decoration: none;">BACK</a>
     </nav>
-
-    <div class="store-container">
-        <aside class="store-sidebar">
-            <h4 style="font-family: 'Orbitron'; color: var(--purple-main); margin-bottom: 20px;">CATEGORIES</h4>
-            <ul style="list-style: none;">
-                <li style="padding: 10px 0; color: white; font-weight: bold;">Ranks</li>
-                <li style="padding: 10px 0; color: #777;">Coins</li>
-                <li style="padding: 10px 0; color: #777;">Crate Keys</li>
-            </ul>
-        </aside>
-
-        <main class="product-grid">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <!-- VIP Card -->
-                <div class="item-card">
-                    <span style="background: var(--purple-main); font-size: 0.6rem; padding: 4px 10px; border-radius: 4px;">RANK</span>
-                    <h2 style="font-family: 'Orbitron'; margin-top: 15px;">VIP CITIZEN</h2>
-                    <p class="price">₹60</p>
-                    <button class="buy-btn">PURCHASE</button>
-                </div>
-
-                <!-- IAS Card -->
-                <div class="item-card" style="border: 1px solid var(--purple-main);">
-                    <span style="background: white; color: black; font-size: 0.6rem; padding: 4px 10px; border-radius: 4px;">POPULAR</span>
-                    <h2 style="font-family: 'Orbitron'; margin-top: 15px;">IAS RANK</h2>
-                    <p class="price">₹250</p>
-                    <button class="buy-btn" style="background: var(--purple-main); color: white;">PURCHASE</button>
-                </div>
+    <div style="text-align: center; padding: 100px 10%;">
+        <h1 style="font-family: 'Orbitron'; color: var(--purple);">PREMIUM STORE</h1>
+        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 50px;">
+            <div style="background: #111; padding: 30px; border: 1px solid var(--purple); border-radius: 10px; width: 250px;">
+                <h3>VIP CITIZEN</h3>
+                <p style="font-size: 1.5rem;">₹60</p>
+                <button style="width: 100%; padding: 10px; background: var(--purple); border: none; color: white; cursor: pointer;">BUY NOW</button>
             </div>
-        </main>
+            <div style="background: #111; padding: 30px; border: 1px solid var(--purple); border-radius: 10px; width: 250px;">
+                <h3>IAS RANK</h3>
+                <p style="font-size: 1.5rem;">₹250</p>
+                <button style="width: 100%; padding: 10px; background: var(--purple); border: none; color: white; cursor: pointer;">BUY NOW</button>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
