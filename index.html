@@ -1,62 +1,63 @@
-site:
-  name: "Praja SMP Store"
-  title: "Praja SMP Official Store"
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Praja SMP Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+</head>
+<body>
 
-branding:
-  logo: "https://your-logo-link.png"   # 🔁 REPLACE THIS
+<div id="app"></div>
 
-header:
-  left:
-    server_ip:
-      text: "PLAY.PRAJASMP.IN"
-      copy_enabled: true
-      copy_message: "IP Copied!"
-  
-  right:
-    discord:
-      text: "Join Discord"
-      icon: "https://cdn-icons-png.flaticon.com/512/2111/2111370.png"
-      link: "https://dsc.gg/prajaSMP"
+<script>
+fetch("index.yml")
+  .then(res => res.text())
+  .then(text => {
+    const data = jsyaml.load(text);
+    renderSite(data);
+  });
 
-sections:
+function renderSite(data) {
+  const app = document.getElementById("app");
 
-  - type: hero
-    title: "Welcome to Praja SMP Store"
-    subtitle: "India's most advanced Minecraft SMP experience"
+  let html = `
+    <div class="navbar">
+      <div class="logo">
+        <img src="${data.branding.logo}" height="40">
+      </div>
 
-  - type: content
-    title: "🛒 Store Information"
-    description: |
-      Welcome to the official store of Praja SMP.
-      
-      Here you can purchase ranks, perks, and exclusive items to enhance your gameplay experience.
-      
-      Your support helps us maintain and improve the server.
+      <div>
+        <span onclick="copyIP('${data.header.left.server_ip.text}')">
+          ${data.header.left.server_ip.text}
+        </span>
+      </div>
 
-  - type: support
-    title: "📞 Support"
-    description: |
-      Need help with your purchase?
-      
-      Contact our support team:
-      Email: developerluxury@gmail.com
-      
-      Or join our Discord server and create a ticket for faster support:
-      https://dsc.gg/prajaSMP
+      <div>
+        <a href="${data.header.right.discord.link}" target="_blank">
+          <img src="${data.header.right.discord.icon}" height="20">
+          ${data.header.right.discord.text}
+        </a>
+      </div>
+    </div>
+  `;
 
-  - type: policy
-    title: "⚠ Refund Policy"
-    description: |
-      All purchases are final and non-refundable.
-      
-      By purchasing, you agree that you will not initiate chargebacks or disputes.
-      
-      Violating this may result in a permanent ban from Praja SMP services.
+  data.sections.forEach(sec => {
+    html += `
+      <section>
+        <h2>${sec.title}</h2>
+        <p>${sec.description || sec.subtitle || ""}</p>
+      </section>
+    `;
+  });
 
-  - type: links
-    title: "📜 Legal"
-    items:
-      - name: "Terms & Conditions"
-        link: "/terms.html"
-      - name: "Privacy Policy"
-        link: "/privacy.html"
+  app.innerHTML = html;
+}
+
+function copyIP(ip) {
+  navigator.clipboard.writeText(ip);
+  alert("Copied: " + ip);
+}
+</script>
+
+</body>
+</html>
