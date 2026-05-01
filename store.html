@@ -1,30 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Store | Praja SMP</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-</head>
-<body style="background: #080808;">
-    <nav class="navbar">
-        <div class="logo">PRAJA<span>SMP</span></div>
-        <a href="index.html" style="color: white; text-decoration: none;">BACK</a>
-    </nav>
-    <div style="text-align: center; padding: 100px 10%;">
-        <h1 style="font-family: 'Orbitron'; color: var(--purple);">PREMIUM STORE</h1>
-        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 50px;">
-            <div style="background: #111; padding: 30px; border: 1px solid var(--purple); border-radius: 10px; width: 250px;">
-                <h3>VIP CITIZEN</h3>
-                <p style="font-size: 1.5rem;">₹60</p>
-                <button style="width: 100%; padding: 10px; background: var(--purple); border: none; color: white; cursor: pointer;">BUY NOW</button>
-            </div>
-            <div style="background: #111; padding: 30px; border: 1px solid var(--purple); border-radius: 10px; width: 250px;">
-                <h3>IAS RANK</h3>
-                <p style="font-size: 1.5rem;">₹250</p>
-                <button style="width: 100%; padding: 10px; background: var(--purple); border: none; color: white; cursor: pointer;">BUY NOW</button>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+:root {
+    --purple: #9d50bb;
+    --dark-bg: #0a0a0a;
+    --card-bg: #141414;
+}
+
+body { background: var(--dark-bg); color: white; font-family: 'Montserrat', sans-serif; margin: 0; }
+
+/* Header Layout */
+.main-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 5%;
+    background: radial-gradient(circle, rgba(157, 80, 187, 0.1) 0%, transparent 70%);
+}
+
+.header-side { width: 250px; text-align: center; }
+
+.server-logo { max-width: 280px; height: auto; filter: drop-shadow(0 0 20px var(--purple)); }
+
+/* Interactive Boxes */
+.ip-box, .discord-box {
+    background: var(--card-bg);
+    border: 1px solid rgba(157, 80, 187, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.ip-box:hover, .discord-box:hover { border-color: var(--purple); transform: translateY(-5px); }
+
+.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; letter-spacing: 2px; }
+.sub-label { display: block; font-size: 0.6rem; color: #555; margin-top: 5px; }
+
+/* Store News */
+.store-news { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+.welcome-box { text-align: center; margin-bottom: 50px; }
+.welcome-box h1 { font-family: 'Orbitron'; font-size: 2rem; }
+.purple-text { color: var(--purple); }
+
+.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.info-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-left: 4px solid var(--purple); }
+.info-card h3 { font-family: 'Orbitron'; color: var(--purple); margin-top: 0; }
+
+.portal-footer { text-align: center; padding: 50px; color: #444; font-size: 0.8rem; }
+.footer-nav a { color: var(--purple); text-decoration: none; }
