@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praja SMP | Official Portal</title>
+    <title>Praja SMP | Home</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="portal-container">
         <header class="main-header">
-            <div class="header-side">
-                <div class="ip-box" onclick="copyIP()">
-                    <span class="label">SERVER IP</span>
-                    <span id="ip-text" class="box-text">PLAY.PRAJASMP.FUN</span>
-                    <span class="sub-label">Click to Copy</span>
-                </div>
+            <div class="ip-box" onclick="copyIP()">
+                <span class="label">SERVER IP</span>
+                <span id="ip-text" class="box-text">PLAY.PRAJASMP.FUN</span>
+                <span class="sub-label">Click to Copy</span>
             </div>
-            <div class="logo-area">
-                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Logo" class="server-logo">
+
+            <div class="welcome-text-area">
+                <h1>Welcome to <br><span style="color: var(--purple);">Praja SMP</span></h1>
             </div>
-            <div class="header-side">
-                <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
-                    <span class="label">COMMUNITY</span>
-                    <span class="box-text">JOIN DISCORD</span>
-                    <span class="sub-label">Click to Join</span>
-                </a>
-            </div>
+
+            <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
+                <span class="label">COMMUNITY</span>
+                <span class="box-text">JOIN DISCORD</span>
+                <span class="sub-label">Click to Join</span>
+            </a>
         </header>
 
-        <div class="store-btn-container">
+        <div style="text-align: center;">
             <a href="store.html" class="visit-store-btn">VISIT STORE</a>
         </div>
 
@@ -37,26 +35,21 @@
             <div class="info-card">
                 <h3>SUPPORT</h3>
                 <p><strong>Email:</strong> developerlaksly@gmail.com</p>
-                <p>Join Discord to <span class="purple-text">Create a Ticket</span></p>
+                <p>Join Discord for Support Tickets</p>
             </div>
             <div class="info-card">
                 <h3>REFUND POLICY</h3>
-                <p>All purchases are final and <br><strong class="purple-text">non-refundable</strong>.</p>
+                <p>All virtual purchases are <strong style="color: var(--purple);">non-refundable</strong>.</p>
             </div>
         </main>
-
-        <footer class="portal-footer">
-            <p>&copy; 2026 Praja SMP. All Rights Reserved.</p>
-        </footer>
     </div>
 
     <script>
         function copyIP() {
             const ip = "play.prajasmp.fun";
             navigator.clipboard.writeText(ip);
-            const text = document.getElementById('ip-text');
-            text.innerText = "COPIED!";
-            setTimeout(() => { text.innerText = ip.toUpperCase(); }, 2000);
+            document.getElementById('ip-text').innerText = "COPIED!";
+            setTimeout(() => { document.getElementById('ip-text').innerText = ip.toUpperCase(); }, 2000);
         }
     </script>
 </body>
