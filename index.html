@@ -1,63 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Praja SMP Store</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praja SMP | Official Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div id="app"></div>
+    <div class="portal-container">
+        <header class="main-header">
+            <div class="header-side left">
+                <div class="ip-box" onclick="copyIP()">
+                    <span class="label">SERVER IP</span>
+                    <span id="ip-text">PLAY.PRAJASMP.FUN</span>
+                    <span class="sub-label">Click to Copy</span>
+                </div>
+            </div>
 
-<script>
-fetch("index.yml")
-  .then(res => res.text())
-  .then(text => {
-    const data = jsyaml.load(text);
-    renderSite(data);
-  });
+            <div class="logo-area">
+                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Praja SMP Logo" class="server-logo">
+            </div>
 
-function renderSite(data) {
-  const app = document.getElementById("app");
+            <div class="header-side right">
+                <a href="https://dsc.gg/prajasmp" target="_blank" class="discord-box">
+                    <span class="label">COMMUNITY</span>
+                    <span class="discord-join">JOIN DISCORD</span>
+                    <span class="sub-label">Click to Join</span>
+                </a>
+            </div>
+        </header>
 
-  let html = `
-    <div class="navbar">
-      <div class="logo">
-        <img src="${data.branding.logo}" height="40">
-      </div>
+        <main class="store-news">
+            <section class="welcome-box">
+                <h1>Welcome to the Official Store of <span class="purple-text">Praja SMP</span></h1>
+                <p>Enhance your gameplay experience with our premium ranks and exclusive perks. Your support helps us keep the server running 24/7.</p>
+            </section>
 
-      <div>
-        <span onclick="copyIP('${data.header.left.server_ip.text}')">
-          ${data.header.left.server_ip.text}
-        </span>
-      </div>
+            <div class="grid-info">
+                <div class="info-card">
+                    <h3>SUPPORT</h3>
+                    <p>Have questions? Our team is here to help.</p>
+                    <p><strong>Email:</strong> developerlaksly@gmail.com</p>
+                    <p><strong>Discord:</strong> <a href="https://dsc.gg/prajasmp" style="color: var(--purple); font-weight: bold; text-decoration: none;">Create a Ticket</a></p>
+                </div>
 
-      <div>
-        <a href="${data.header.right.discord.link}" target="_blank">
-          <img src="${data.header.right.discord.icon}" height="20">
-          ${data.header.right.discord.text}
-        </a>
-      </div>
+                <div class="info-card">
+                    <h3>REFUND POLICY</h3>
+                    <p>All purchases are final and <strong>non-refundable</strong>. Any chargeback attempt results in a permanent network ban.</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="portal-footer">
+            <p>&copy; 2026 Praja SMP. All Rights Reserved.</p>
+            <nav class="footer-nav">
+                <a href="terms.html">Terms & Conditions</a> | 
+                <a href="privacy.html">Privacy Policy</a>
+            </nav>
+        </footer>
     </div>
-  `;
 
-  data.sections.forEach(sec => {
-    html += `
-      <section>
-        <h2>${sec.title}</h2>
-        <p>${sec.description || sec.subtitle || ""}</p>
-      </section>
-    `;
-  });
-
-  app.innerHTML = html;
-}
-
-function copyIP(ip) {
-  navigator.clipboard.writeText(ip);
-  alert("Copied: " + ip);
-}
-</script>
-
+    <script>
+        function copyIP() {
+            const ip = "play.prajasmp.fun";
+            navigator.clipboard.writeText(ip);
+            const text = document.getElementById('ip-text');
+            text.innerText = "COPIED!";
+            text.style.color = "#9d50bb";
+            setTimeout(() => { 
+                text.innerText = ip.toUpperCase(); 
+                text.style.color = "white";
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
