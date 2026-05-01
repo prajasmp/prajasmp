@@ -1,67 +1,132 @@
-/* NAVBAR */
-.navbar {
+:root {
+    --purple: #9d50bb;
+    --dark-bg: #0a0a0a;
+    --card-bg: #141414;
+}
+
+/* RESET & BASE */
+* { box-sizing: border-box; }
+body { 
+    background: var(--dark-bg); 
+    color: white; 
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0; 
+    overflow-x: hidden;
+}
+
+.portal-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* HEADER SECTION */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background: rgba(0,0,0,0.9);
-    border-bottom: 2px solid var(--purple);
+    padding: 40px 0;
+    flex-wrap: wrap;
+    gap: 20px;
 }
-.logo-small { font-family: 'Orbitron'; font-weight: 900; font-size: 1.2rem; }
-.logo-small span { color: var(--purple); }
-.nav-links a { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; border: 1px solid var(--purple); padding: 5px 15px; border-radius: 4px; transition: 0.3s; }
-.nav-links a:hover { background: var(--purple); }
 
-/* STORE LAYOUT */
-.store-header { text-align: center; padding: 60px 20px; background: linear-gradient(to bottom, rgba(157, 80, 187, 0.1), transparent); }
-.store-header h1 { font-family: 'Orbitron'; font-size: 3rem; margin: 0; }
-.category-title { font-family: 'Orbitron'; text-align: center; margin: 50px 0 30px; color: var(--purple); letter-spacing: 3px; font-size: 1.2rem; }
+.header-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+}
 
-.store-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px; }
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
 
-/* PRODUCT CARDS */
-.product-card {
+.server-logo {
+    max-width: 350px; /* Fixes the giant image size from your screenshot */
+    height: auto;
+    filter: drop-shadow(0 0 20px var(--purple));
+}
+
+/* BOXES */
+.ip-box, .discord-box {
     background: var(--card-bg);
-    border: 1px solid rgba(157, 80, 187, 0.2);
-    padding: 40px 20px;
-    border-radius: 15px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: 0.4s ease;
-}
-.product-card:hover { transform: translateY(-10px); border-color: var(--purple); box-shadow: 0 10px 30px rgba(157, 80, 187, 0.2); }
-
-.product-card h3 { font-family: 'Orbitron'; font-size: 1.4rem; margin-bottom: 10px; }
-.price { font-size: 2rem; font-weight: 900; color: var(--purple); margin: 20px 0; }
-.features { list-style: none; padding: 0; margin-bottom: 30px; text-align: left; display: inline-block; }
-.features li { font-size: 0.9rem; color: #bbb; margin-bottom: 8px; }
-.features li::before { content: "✔"; color: var(--purple); margin-right: 10px; }
-
-/* BUTTONS & TAGS */
-.buy-btn {
-    width: 100%;
-    padding: 12px;
-    background: var(--purple);
-    border: none;
-    color: white;
-    font-family: 'Orbitron';
-    font-weight: bold;
+    border: 1px solid rgba(157, 80, 187, 0.3);
+    padding: 15px 30px;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 5px;
+    text-decoration: none;
     transition: 0.3s;
+    text-align: center;
 }
-.buy-btn:hover { background: #b666d6; box-shadow: 0 0 15px var(--purple); }
 
-.featured { border: 2px solid var(--purple); transform: scale(1.05); }
-.tag {
-    position: absolute;
-    top: 10px;
-    right: -30px;
-    background: var(--purple);
-    padding: 5px 35px;
-    transform: rotate(45deg);
-    font-size: 0.6rem;
-    font-weight: bold;
+.ip-box:hover, .discord-box:hover {
+    border-color: var(--purple);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(157, 80, 187, 0.2);
 }
+
+.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; letter-spacing: 2px; }
+#ip-text, .discord-join { font-weight: bold; font-size: 1.1rem; color: white; display: block; margin: 5px 0; }
+.sub-label { font-size: 0.6rem; color: #666; }
+
+/* VISIT STORE BUTTON */
+.store-btn-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.visit-store-btn {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    padding: 18px 60px;
+    font-family: 'Orbitron';
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 20px var(--purple);
+    transition: 0.3s ease;
+}
+
+.visit-store-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px var(--purple);
+}
+
+/* CARDS & NEWS */
+.store-news { margin-top: 50px; }
+.welcome-box { text-align: center; margin-bottom: 60px; }
+.welcome-box h1 { font-family: 'Orbitron'; font-size: 2.2rem; }
+.purple-text { color: var(--purple); }
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 3px solid var(--purple);
+    text-align: center;
+}
+
+.ticket-link {
+    color: var(--purple);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.portal-footer {
+    text-align: center;
+    padding: 80px 0 40px;
+    color: #444;
+    font-size: 0.8rem;
+}
+
+.footer-nav a { color: var(--purple); text-decoration: none; margin: 0 10px; }
