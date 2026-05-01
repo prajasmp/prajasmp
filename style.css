@@ -1,67 +1,61 @@
 /* BLURRED BACKGROUND SETUP */
 .bg-overlay {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: url('YOUR_IMAGE_LINK_HERE') no-repeat center center/cover;
-    filter: blur(12px) brightness(0.3); /* Premium Dark Blur */
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    /* 1. Add your image link inside the quotes below */
+    /* 2. The linear-gradient is a backup in case the link breaks */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://img.sanishtech.com/u/03e648201d82f3a9acf9f358eeb88ad8.png') no-repeat center center/cover;
+    filter: blur(12px); 
+    transform: scale(1.1); /* Prevents white edges caused by blur */
     z-index: -1;
 }
 
-/* MINI LOGO FIX (Correcting Screenshot 2026-05-01 221039.jpg) */
-.store-nav-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-}
-
+/* LOGO FIX (Ensuring it's professional and not too big) */
 .store-mini-logo {
-    max-width: 120px; /* Reduced from the giant size in your screenshot */
+    max-width: 150px; /* Reduced for a premium header feel */
     height: auto;
-    filter: drop-shadow(0 0 10px var(--purple));
+    filter: drop-shadow(0 0 15px var(--purple));
+    margin-bottom: 10px;
 }
 
-/* PREMIUM ITEM STYLING */
+/* PREMIUM GRID (Matching your homepage look) */
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* GLASSMORPHISM CARD STYLE */
 .premium-card {
-    border-left: none !important; /* Overriding basic border */
+    background: rgba(20, 20, 20, 0.8);
     border: 1px solid rgba(157, 80, 187, 0.3);
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 12px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease-in-out;
 }
 
 .premium-card:hover {
     border-color: var(--purple);
-    transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(157, 80, 187, 0.4);
+    box-shadow: 0 0 30px rgba(157, 80, 187, 0.25);
+    transform: translateY(-5px);
 }
 
+/* ITEM ROW STYLING */
 .premium-item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 10px 15px;
-    margin-bottom: 8px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    border: 1px solid transparent;
-}
-
-.premium-item:hover {
-    background: rgba(157, 80, 187, 0.1);
-    border-color: rgba(157, 80, 187, 0.2);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .price-tag {
     font-family: 'Orbitron';
     color: var(--purple);
     font-weight: 900;
-    text-shadow: 0 0 5px var(--purple);
-}
-
-/* SPECIAL GLOW FOR BULK ORDERS */
-.featured-glow {
-    border: 1px solid var(--purple);
-    background: linear-gradient(145deg, rgba(157, 80, 187, 0.2), #141414);
-    box-shadow: 0 0 20px rgba(157, 80, 187, 0.3);
 }
