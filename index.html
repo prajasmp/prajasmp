@@ -3,49 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Praja SMP | India's Premier Gaming Network</title>
+    <title>Praja SMP | India's #1 Purple Network</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Premium Fonts: Orbitron for Sci-fi/Gaming headers, Montserrat for UI -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">PRAJA<span>SMP</span></div>
         <div class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="/store.html" class="nav-store">Store</a>
-            <a href="https://discord.gg/yourlink">Community</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="store.html" class="nav-store">Store</a>
+            <a href="#">Discord</a>
         </div>
     </nav>
 
     <header class="hero">
-        <!-- Visual Layers -->
-        <div class="hero-overlay"></div>
-        
         <div class="hero-content">
-            <div class="badge">NOW OPEN: SEASON 1</div>
-            <h1>LEAVE YOUR <span class="highlight">LEGACY</span></h1>
-            <p>Join India's most technically advanced Minecraft community. Custom Items. Unique Economy. Zero Lag.</p>
-            
-            <div class="hero-btns">
-                <a href="/store.html" class="btn-premium">Explore Shop</a>
-                <div class="ip-container" onclick="copyIP()">
-                    <span id="ip-text">PLAY.PRAJASMP.IN</span>
-                    <span class="copy-icon">📋</span>
-                </div>
-            </div>
+            <p style="letter-spacing: 5px; color: #888;">THE ULTIMATE EXPERIENCE</p>
+            <h1>CONQUER THE <br><span class="purple-text">NEBULAS</span></h1>
+            <p style="margin: 20px 0 40px; color: #bbb;">India's Premier Minecraft SMP with custom purple-tier economy and items.</p>
+            <a href="store.html" class="btn-main">BROWSE STORE</a>
         </div>
     </header>
 
-    <script>
-        function copyIP() {
-            const ip = "play.prajasmp.in";
-            navigator.clipboard.writeText(ip);
-            const ipText = document.getElementById('ip-text');
-            ipText.innerText = "COPIED!";
-            setTimeout(() => { ipText.innerText = ip.toUpperCase(); }, 2000);
-        }
-    </script>
 </body>
 </html>
