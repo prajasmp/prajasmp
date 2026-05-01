@@ -1,133 +1,132 @@
 :root {
     --purple: #9d50bb;
     --dark-bg: #0a0a0a;
-    --card-bg: rgba(20, 20, 20, 0.95); /* High-quality dark glass */
+    --card-bg: #141414;
 }
 
-/* BASE STYLING */
-body {
-    background-color: var(--dark-bg);
-    /* Replace YOUR_IMAGE_LINK_HERE with your link */
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
-                url('https://img.sanishtech.com/u/03e648201d82f3a9acf9f358eeb88ad8.png') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
+/* RESET & BASE */
+* { box-sizing: border-box; }
+body { 
+    background: var(--dark-bg); 
+    color: white; 
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0; 
+    overflow-x: hidden;
 }
 
-/* PORTAL CONTAINER */
 .portal-container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* HEADER - CLEAN & SMALL LOGO */
-.store-nav-header {
+/* HEADER SECTION */
+.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 0;
+    padding: 40px 0;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.store-mini-logo {
-    max-width: 140px; /* Professional size, not too big */
+.header-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+}
+
+.logo-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.server-logo {
+    max-width: 350px; /* Fixes the giant image size from your screenshot */
     height: auto;
-    filter: drop-shadow(0 0 10px var(--purple));
+    filter: drop-shadow(0 0 20px var(--purple));
 }
 
-/* WELCOME TEXT */
-.welcome-box {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.welcome-box h1 {
-    font-family: 'Orbitron';
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-}
-
-.purple-text {
-    color: var(--purple);
-    text-shadow: 0 0 10px var(--purple);
-}
-
-/* PREMIUM GRID SYSTEM */
-.grid-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
-
-/* PREMIUM CARD LOOK */
-.info-card {
+/* BOXES */
+.ip-box, .discord-box {
     background: var(--card-bg);
     border: 1px solid rgba(157, 80, 187, 0.3);
-    border-radius: 10px;
-    padding: 25px;
-    transition: 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s;
+    text-align: center;
 }
 
-.info-card:hover {
+.ip-box:hover, .discord-box:hover {
     border-color: var(--purple);
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(157, 80, 187, 0.2);
+    box-shadow: 0 5px 15px rgba(157, 80, 187, 0.2);
 }
 
-.info-card h3 {
+.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; letter-spacing: 2px; }
+#ip-text, .discord-join { font-weight: bold; font-size: 1.1rem; color: white; display: block; margin: 5px 0; }
+.sub-label { font-size: 0.6rem; color: #666; }
+
+/* VISIT STORE BUTTON */
+.store-btn-container {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.visit-store-btn {
+    display: inline-block;
+    background: var(--purple);
+    color: white;
+    padding: 18px 60px;
     font-family: 'Orbitron';
+    font-weight: 900;
+    text-decoration: none;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    box-shadow: 0 0 20px var(--purple);
+    transition: 0.3s ease;
+}
+
+.visit-store-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px var(--purple);
+}
+
+/* CARDS & NEWS */
+.store-news { margin-top: 50px; }
+.welcome-box { text-align: center; margin-bottom: 60px; }
+.welcome-box h1 { font-family: 'Orbitron'; font-size: 2.2rem; }
+.purple-text { color: var(--purple); }
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 3px solid var(--purple);
+    text-align: center;
+}
+
+.ticket-link {
     color: var(--purple);
-    font-size: 1.1rem;
-    margin-top: 0;
-    border-bottom: 1px solid rgba(157, 80, 187, 0.2);
-    padding-bottom: 15px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* ITEM ROWS */
-.premium-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.price-tag {
-    font-family: 'Orbitron';
-    color: var(--purple);
-    font-weight: 700;
-}
-
-/* SPECIAL FEATURED BOX */
-.featured-glow {
-    background: linear-gradient(145deg, rgba(157, 80, 187, 0.1), #141414);
-    border: 1px solid var(--purple);
-}
-
-/* FOOTER */
 .portal-footer {
     text-align: center;
-    padding: 60px 0;
-    color: #666;
+    padding: 80px 0 40px;
+    color: #444;
     font-size: 0.8rem;
 }
 
-/* RETURN BUTTON (matching Discord/IP style) */
-.back-btn {
-    text-decoration: none;
-    border: 1px solid var(--purple);
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.back-btn:hover {
-    background: var(--purple);
-}
+.footer-nav a { color: var(--purple); text-decoration: none; margin: 0 10px; }
