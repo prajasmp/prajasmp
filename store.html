@@ -3,75 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store | Praja SMP</title>
+    <title>Premium Store | Praja SMP</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 </head>
-<body class="store-page">
+<body class="store-body">
 
-    <nav class="navbar">
-        <div class="logo-small">PRAJA<span>SMP</span></div>
-        <div class="nav-links">
-            <a href="index.html">BACK TO PORTAL</a>
+    <!-- Blurred Background Layer -->
+    <div class="bg-overlay"></div>
+
+    <div class="store-wrapper">
+        <header class="store-header">
+            <div class="logo-area">
+                <img src="https://img.sanishtech.com/u/4dbae0d64de0405c12b04473a7805525.jpg" alt="Logo" class="store-logo-img">
+            </div>
+            <h1 class="premium-title">💎 PRAJA SMP | PREMIUM STORE</h1>
+            <p class="store-subtitle">⚡ UNLOCK EXCLUSIVE RANKS, CRATES, COINS & MORE</p>
+            <div class="header-line"></div>
+        </header>
+
+        <div class="store-grid">
+            
+            <!-- RANKS SECTION -->
+            <section class="store-section">
+                <h2 class="section-title">🏷️ RANKS</h2>
+                <div class="item-list">
+                    <div class="item"><span>VIP CITIZEN</span> <span class="price">₹60</span></div>
+                    <div class="item"><span>COLLECTOR</span> <span class="price">₹125</span></div>
+                    <div class="item"><span>IAS RANK</span> <span class="price">₹250</span></div>
+                    <div class="item"><span>CUSTOM RANK</span> <span class="price">₹625</span></div>
+                </div>
+                <p class="section-footer">✨ Includes custom kits + exclusive perks</p>
+            </section>
+
+            <!-- COINS SECTION -->
+            <section class="store-section">
+                <h2 class="section-title">🪙 COINS</h2>
+                <div class="item-list">
+                    <div class="item"><span>100 COINS</span> <span class="price">₹25</span></div>
+                    <div class="item"><span>150 COINS</span> <span class="price">₹38</span></div>
+                    <div class="item"><span>450 COINS</span> <span class="price">₹63</span></div>
+                    <div class="item"><span>1000 COINS</span> <span class="price">₹125</span></div>
+                    <div class="item"><span>2800 COINS</span> <span class="price">₹250</span></div>
+                    <div class="item"><span>5660 COINS</span> <span class="price">₹469</span></div>
+                    <div class="item"><span>7800 COINS</span> <span class="price">₹663</span></div>
+                </div>
+            </section>
+
+            <!-- CRATE KEYS -->
+            <section class="store-section">
+                <h2 class="section-title">🗝️ CRATE KEYS</h2>
+                <div class="item-list">
+                    <div class="item"><span>MYSTERY KEY</span> <span class="price">₹50 | ₹125 (x3)</span></div>
+                    <div class="item"><span>ROYAL CRATE</span> <span class="price">₹40 | ₹90 (x3)</span></div>
+                    <div class="item"><span>ARTIFACT CRATE</span> <span class="price">₹125 | ₹310 (x3)</span></div>
+                </div>
+                <p class="section-footer">🎁 Rare & high-tier reward drops</p>
+            </section>
+
+            <!-- SELL WANDS -->
+            <section class="store-section">
+                <h2 class="section-title">💰 SELL WAND</h2>
+                <div class="item-list">
+                    <div class="item"><span>1.1x SELL WAND</span> <span class="price">₹60</span></div>
+                    <div class="item"><span>1.5x SELL WAND</span> <span class="price">₹125</span></div>
+                    <div class="item"><span>2x SELL WAND</span> <span class="price">₹250</span></div>
+                    <div class="item"><span>3x SELL WAND</span> <span class="price">₹375</span></div>
+                </div>
+                <p class="section-footer">📈 Boost your selling profit instantly</p>
+            </section>
+
+            <!-- PREMIUM KITS -->
+            <section class="store-section">
+                <h2 class="section-title">⚔️ PREMIUM KITS</h2>
+                <div class="item-list">
+                    <div class="item"><span>ECHELON</span> <span class="price">₹190</span></div>
+                    <div class="item"><span>VORTEX</span> <span class="price">₹310</span></div>
+                    <div class="item"><span>ASTRON</span> <span class="price">₹500</span></div>
+                </div>
+                <p class="section-footer">🛡️ Armor • Tools • Netherite • Elytra</p>
+            </section>
+
+            <!-- BULK ORDERS -->
+            <section class="store-section featured-section">
+                <h2 class="section-title">💎 BULK ORDERS</h2>
+                <p>Buy 10+ items → Special Discounts</p>
+                <p class="price">BEST DEALS FOR TRADERS</p>
+            </section>
+
         </div>
-    </nav>
 
-    <header class="store-header">
-        <h1>OFFICIAL <span class="purple-text">STORE</span></h1>
-        <p>Select a category below to browse our premium products</p>
-    </header>
-
-    <div class="store-container">
-        <!-- CATEGORY: RANKS -->
-        <h2 class="category-title">SERVER RANKS</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="card-glow"></div>
-                <h3>VIP CITIZEN</h3>
-                <p class="price">₹60</p>
-                <ul class="features">
-                    <li>Purple Chat Color</li>
-                    <li>Priority Queue</li>
-                    <li>Access to /kit vip</li>
-                </ul>
-                <button class="buy-btn">ADD TO CART</button>
-            </div>
-
-            <div class="product-card featured">
-                <div class="card-glow"></div>
-                <div class="tag">BEST VALUE</div>
-                <h3>IAS RANK</h3>
-                <p class="price">₹250</p>
-                <ul class="features">
-                    <li>Neon Name Tag</li>
-                    <li>Access to /fly</li>
-                    <li>Monthly 500 Coins</li>
-                </ul>
-                <button class="buy-btn">ADD TO CART</button>
-            </div>
-        </div>
-
-        <!-- CATEGORY: CURRENCY -->
-        <h2 class="category-title">VIRTUAL CURRENCY</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="card-glow"></div>
-                <h3>1000 COINS</h3>
-                <p class="price">₹100</p>
-                <button class="buy-btn">PURCHASE</button>
-            </div>
-            <div class="product-card">
-                <div class="card-glow"></div>
-                <h3>5000 COINS</h3>
-                <p class="price">₹450</p>
-                <button class="buy-btn">PURCHASE</button>
-            </div>
-        </div>
+        <footer class="store-footer">
+            <p>🚀 Powered by Praja SMP Premium Economy System</p>
+            <p>SECURE PAYMENTS • INSTANT DELIVERY</p>
+            <a href="index.html" class="back-link">Return to Portal</a>
+        </footer>
     </div>
-
-    <footer class="portal-footer">
-        <p>&copy; 2026 Praja SMP. Not affiliated with Mojang AB.</p>
-    </footer>
-
 </body>
 </html>
