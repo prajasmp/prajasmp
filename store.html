@@ -1,50 +1,77 @@
-:root {
-    --purple: #9d50bb;
-    --dark-bg: #0a0a0a;
-    --card-bg: #141414;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store | Praja SMP</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body class="store-page">
 
-body { background: var(--dark-bg); color: white; font-family: 'Montserrat', sans-serif; margin: 0; }
+    <nav class="navbar">
+        <div class="logo-small">PRAJA<span>SMP</span></div>
+        <div class="nav-links">
+            <a href="index.html">BACK TO PORTAL</a>
+        </div>
+    </nav>
 
-/* Header Layout */
-.main-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 50px 5%;
-    background: radial-gradient(circle, rgba(157, 80, 187, 0.1) 0%, transparent 70%);
-}
+    <header class="store-header">
+        <h1>OFFICIAL <span class="purple-text">STORE</span></h1>
+        <p>Select a category below to browse our premium products</p>
+    </header>
 
-.header-side { width: 250px; text-align: center; }
+    <div class="store-container">
+        <!-- CATEGORY: RANKS -->
+        <h2 class="category-title">SERVER RANKS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="card-glow"></div>
+                <h3>VIP CITIZEN</h3>
+                <p class="price">₹60</p>
+                <ul class="features">
+                    <li>Purple Chat Color</li>
+                    <li>Priority Queue</li>
+                    <li>Access to /kit vip</li>
+                </ul>
+                <button class="buy-btn">ADD TO CART</button>
+            </div>
 
-.server-logo { max-width: 280px; height: auto; filter: drop-shadow(0 0 20px var(--purple)); }
+            <div class="product-card featured">
+                <div class="card-glow"></div>
+                <div class="tag">BEST VALUE</div>
+                <h3>IAS RANK</h3>
+                <p class="price">₹250</p>
+                <ul class="features">
+                    <li>Neon Name Tag</li>
+                    <li>Access to /fly</li>
+                    <li>Monthly 500 Coins</li>
+                </ul>
+                <button class="buy-btn">ADD TO CART</button>
+            </div>
+        </div>
 
-/* Interactive Boxes */
-.ip-box, .discord-box {
-    background: var(--card-bg);
-    border: 1px solid rgba(157, 80, 187, 0.3);
-    padding: 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-    display: block;
-}
+        <!-- CATEGORY: CURRENCY -->
+        <h2 class="category-title">VIRTUAL CURRENCY</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="card-glow"></div>
+                <h3>1000 COINS</h3>
+                <p class="price">₹100</p>
+                <button class="buy-btn">PURCHASE</button>
+            </div>
+            <div class="product-card">
+                <div class="card-glow"></div>
+                <h3>5000 COINS</h3>
+                <p class="price">₹450</p>
+                <button class="buy-btn">PURCHASE</button>
+            </div>
+        </div>
+    </div>
 
-.ip-box:hover, .discord-box:hover { border-color: var(--purple); transform: translateY(-5px); }
+    <footer class="portal-footer">
+        <p>&copy; 2026 Praja SMP. Not affiliated with Mojang AB.</p>
+    </footer>
 
-.label { display: block; font-size: 0.7rem; color: var(--purple); font-family: 'Orbitron'; letter-spacing: 2px; }
-.sub-label { display: block; font-size: 0.6rem; color: #555; margin-top: 5px; }
-
-/* Store News */
-.store-news { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-.welcome-box { text-align: center; margin-bottom: 50px; }
-.welcome-box h1 { font-family: 'Orbitron'; font-size: 2rem; }
-.purple-text { color: var(--purple); }
-
-.grid-info { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.info-card { background: var(--card-bg); padding: 25px; border-radius: 10px; border-left: 4px solid var(--purple); }
-.info-card h3 { font-family: 'Orbitron'; color: var(--purple); margin-top: 0; }
-
-.portal-footer { text-align: center; padding: 50px; color: #444; font-size: 0.8rem; }
-.footer-nav a { color: var(--purple); text-decoration: none; }
+</body>
+</html>
